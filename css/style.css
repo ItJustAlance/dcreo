@@ -563,6 +563,82 @@ body.body-lock { overflow: hidden}
 
 
 
+body.body-lock { overflow: hidden}
+
+.b-popup { position: fixed;top: 0;left: 0; width: 100%; overflow: hidden; height: 100%;  z-index: -11; opacity: 0; visibility: hidden}
+.b-popup.active {z-index: 50; opacity: 1; visibility: visible;}
+.b-popup .close { position: absolute; top: 16px;right: 16px;z-index: 2; width: 56px; height: 56px; border-radius: 50%;
+    background: #FE5721; display: flex; align-items: center; justify-content: center; cursor: pointer;}
+.b-popup .close svg {stroke: #fff; width: 14px;height: 14px;}
+
+.b-popup--center {
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    outline: 0;
+    visibility: visible;
+    opacity: 1;
+}
+.show-popup-thanks { overflow: hidden}
+.show-popup-thanks .popup-thanks { display: block}
+.b-popup--center .b-popup__wrapper {
+    position: relative;
+    width: auto;
+    margin: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+.b-popup--center .b-popup__wrapper:before {
+    display: block;
+    height: calc(100vh - (0.5rem * 2));
+    content: "";
+}
+.b-popup--center .b-popup__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 8px;
+    outline: 0;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.popup-thanks .icon {margin-bottom: 40px;}
+.b-popup--center.active { display: block;}
+.b-popup--center .title {font-size: 24px;padding-bottom: 18px; font-weight: 500;}
+.b-popup--center .text {font-size: 16px; padding-bottom: 40px;}
+.b-popup--center .b-btn {width: 100%}
+.b-popup--center .btn {width: 100%; justify-content: center}
+
+.b-popup--center .b-form {width: 100%;padding-top: 15px;}
+.b-popup--center .form-row {
+    padding-bottom: 20px;
+    color: #000;
+}
+.b-popup--center .input__input {border: 1px solid #FE5721; color: #000; width: 100%; padding: 10px 5px;}
+.b-popup--center .input__input::placeholder,
+.b-popup--center textarea::placeholder {
+    color: #000;
+}
+.b-popup--center .close {top: -16px; right: -16px;}
+
+
 @media(max-width: 1410px){
     body {font-size: 16px;}
     .all {padding: 0 40px;}
